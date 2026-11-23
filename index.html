@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Basile</title>
+<meta name="description" content="Le site de Basile">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="nav">
+  <a class="logo" href="#">Basile</a>
+  <nav>
+    <a href="#apropos">À propos</a>
+    <a href="#activites">Activités</a>
+    <a href="#contact">Contact</a>
+  </nav>
+</header>
+
+<main>
+  <section class="hero">
+    <p class="kicker">Bienvenue</p>
+    <h1>Bonjour, moi c'est Basile.</h1>
+    <p class="lead">Ce site est en construction. Bientôt ici : qui je suis, ce que je fais et comment me joindre.</p>
+    <a class="btn" href="#contact">Me contacter</a>
+  </section>
+
+  <section id="apropos" class="block">
+    <h2>À propos</h2>
+    <p>Texte de présentation provisoire. Quelques lignes pour dire qui est Basile, d'où il vient et ce qui le passionne.</p>
+  </section>
+
+  <section id="activites" class="block">
+    <h2>Activités</h2>
+    <div class="cards">
+      <article class="card"><h3>Projet 1</h3><p>Description courte à remplacer.</p></article>
+      <article class="card"><h3>Projet 2</h3><p>Description courte à remplacer.</p></article>
+      <article class="card"><h3>Projet 3</h3><p>Description courte à remplacer.</p></article>
+    </div>
+  </section>
+
+  <section id="contact" class="block">
+    <h2>Contact</h2>
+    <p>Coordonnées à venir.</p>
+  </section>
+</main>
+
+<footer>© <span id="y"></span> Basile</footer>
+<script>document.getElementById('y').textContent = new Date().getFullYear();</script>
+</body>
+</html>
