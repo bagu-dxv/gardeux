@@ -3,49 +3,58 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Basile</title>
-<meta name="description" content="Le site de Basile">
+<title>Checklist SOAP – Exercice</title>
+<meta name="description" content="Exercice interactif : retrouvez les informations S et O nécessaires à l'analyse pharmaceutique (méthode SOAP).">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
-<header class="nav">
-  <a class="logo" href="#">Basile</a>
-  <nav>
-    <a href="#apropos">À propos</a>
-    <a href="#activites">Activités</a>
-    <a href="#contact">Contact</a>
-  </nav>
+<header class="top">
+  <div class="wrap top-inner">
+    <div class="brand"><span class="mark">℞</span> Exercice SOAP</div>
+    <button id="reset" class="ghost" type="button">Recommencer</button>
+  </div>
 </header>
 
-<main>
-  <section class="hero">
-    <p class="kicker">Bienvenue</p>
-    <h1>Bonjour, moi c'est Basile.</h1>
-    <p class="lead">Ce site est en construction. Bientôt ici : qui je suis, ce que je fais et comment me joindre.</p>
-    <a class="btn" href="#contact">Me contacter</a>
+<main class="wrap">
+  <section class="intro">
+    <h1 id="titre"></h1>
+    <p class="sub" id="sousTitre"></p>
+    <p class="consigne" id="consigne"></p>
   </section>
 
-  <section id="apropos" class="block">
-    <h2>À propos</h2>
-    <p>Texte de présentation provisoire. Quelques lignes pour dire qui est Basile, d'où il vient et ce qui le passionne.</p>
-  </section>
+  <section class="search-card" aria-label="Recherche">
+    <form id="form" autocomplete="off">
+      <label for="q" class="sr-only">Saisissez un élément</label>
+      <input id="q" type="text" placeholder="Ex. : allergies, poids, tabac…" autofocus>
+      <button type="submit">Valider</button>
+    </form>
+    <p id="feedback" class="feedback" role="status" aria-live="polite">&nbsp;</p>
 
-  <section id="activites" class="block">
-    <h2>Activités</h2>
-    <div class="cards">
-      <article class="card"><h3>Projet 1</h3><p>Description courte à remplacer.</p></article>
-      <article class="card"><h3>Projet 2</h3><p>Description courte à remplacer.</p></article>
-      <article class="card"><h3>Projet 3</h3><p>Description courte à remplacer.</p></article>
+    <div class="progress">
+      <div class="progress-head">
+        <span><strong id="found">0</strong> / <span id="total">0</span> éléments trouvés</span>
+        <span id="pct">0 %</span>
+      </div>
+      <div class="bar"><div id="fill"></div></div>
     </div>
   </section>
 
-  <section id="contact" class="block">
-    <h2>Contact</h2>
-    <p>Coordonnées à venir.</p>
+  <section id="bravo" class="bravo" hidden>
+    <div class="bravo-icon">✓</div>
+    <div>
+      <h2>Félicitations !</h2>
+      <p>Vous avez retrouvé toutes les informations nécessaires à l'analyse pharmaceutique.</p>
+    </div>
   </section>
+
+  <div id="board" class="board"></div>
 </main>
 
-<footer>© <span id="y"></span> Basile</footer>
-<script>document.getElementById('y').textContent = new Date().getFullYear();</script>
+<footer class="wrap foot">Saisissez un mot ou une expression : majuscules, accents et petites fautes sont tolérés.</footer>
+
+<script src="data.js"></script>
+<script src="app.js"></script>
 </body>
 </html>
